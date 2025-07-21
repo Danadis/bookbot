@@ -3,7 +3,6 @@ from stats import (
         get_num_words,
     )
 
-
 def main():
     if len(sys.argv) < 2:
         print("Usage: python3 main.py <path_to_book>")
@@ -15,17 +14,16 @@ def main():
     num_char = get_char_count(text)
     book_report = send_book_report(num_char)
     ## print(num_char)
-    print("--- Begin report of books/frankenstein.txt --- ")
+    print(f"--- Begin report of {book_path} --- ")
     print(f"{num_words} words found in the document")
     print()
 
     for item in book_report:
         if not item["char"].isalpha():
             continue
-        print(f"The '{item['char']}' character was found {item ['num']} times")
+        print(f"{item['char']}: {item['num']}")
 
     print("--- End report ---")
-
 
 
 
